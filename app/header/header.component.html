@@ -1,0 +1,100 @@
+<header>
+    <div class="container-fluid">
+      <div class="row">
+          <div class="pull-right userblock">
+            <span>Hi,Helms <i class="fa fa-angle-down" aria-hidden="true"></i></span>
+          </div>
+      </div>
+    </div>
+  </header> 
+
+  <div class="hamberger">
+    <div class="menu-btn" 
+         id="side-bar" [ngClass]="{'active':visible}" (click)="visible=!visible;">&nbsp;</div>
+    <!-- <button type="button" 
+          class="navbar-toggle nav-bar pull-left" 
+          >
+       
+        </button> -->
+      
+    <div class="pull-left logoblock">
+        <img src="assets\images\RxPACE_logo.svg" alt="logo" />
+    </div>
+    <div [ngClass]="{'is-visible':visible}" class="menu">
+     <div class="nav-side-menu">
+        <div class="menu-list">
+            <ul id="menu-content" class="menu-content">
+                <li>
+                  <a routerLink="/dashboard" class="heading">Dashboard</a>
+                </li>
+                <li data-toggle="collapse" data-target="#products" class="collapsed">
+                  <a href="#" class="heading">Work Items <span class="arrow"></span></a>
+                </li>
+                <ul id="products" class="sub-menu collapse in">
+                  <li data-toggle="collapse" data-target="#intake" class="collapsed">
+                  <a href="#" class="heading red">Case Intake <span class="arrow black"></span></a>
+                </li>
+                <ul class="sub-menu noleftborder collapse in" id="intake">
+                    <li><a href="#">New Case</a></li>
+                    <li><a href="#">All Items</a></li>
+                    <li><a href="#">My Items</a></li>
+                </ul>
+                <li data-toggle="collapse" data-target="#service" class="collapsed  noBorder">
+                  <a href="#" class="heading red"> Pending Case Review <span class="arrow black"></span></a>
+                </li>  
+                <ul class="sub-menu noleftborder collapse in" id="service">
+                  <li><a href="#">All Items</a></li>
+                  <li><a href="#">My Items</a></li>
+                </ul>
+
+                <li data-toggle="collapse" data-target="#new" class="collapsed noBorder">
+                  <a href="#" class="heading red"> Completed Case Review <span class="arrow black"></span></a>
+                </li>
+                <ul class="sub-menu noleftborder collapse in" id="new">
+                  <li><a href="#">All Items</a></li>
+                  <li><a href="#">My Items</a></li>
+                </ul>
+
+                </ul>
+
+                 <li class="borderTop" data-toggle="collapse" data-target="#client" class="collapsed">
+                  <a href="#" class="heading">
+                    Configuration Management
+                 <span class="arrow black"></span>
+                  </a>
+                  </li>
+                  <ul  id="client" class="collapsed in noleftborder ">
+                  <li data-toggle="collapse" data-target="#clientConfig" class="collapsed noBorder">
+                    <a href="#" class="heading red">Client Configuration <span class="arrow black"></span></a>
+                  </li>
+                  <ul class="sub-menu  collapse in" id="clientConfig">
+                    <li><a href="#">Create/Update</a></li>
+                    <li><a href="#">Approve</a></li>
+                    <li><a href="#">Promote</a></li>
+                  </ul>
+
+                <li data-toggle="collapse" data-target="#application" class="collapsed noBorder">
+                  <a href="#" class="heading red"> Application Configuration <span class="arrow black"></span></a>
+                </li>
+                <ul class="sub-menu  collapse in" id="application">
+                  <li><a href="#">Create/Update</a></li>
+                  <li><a href="#">Approve</a></li>
+                  <li><a href="#">Promote</a></li>
+                </ul>
+
+                  </ul>
+                <li data-toggle="collapse" data-target="#admin" class="collapsed">
+                  <a href="#" class="heading"> Admin <span class="arrow black"></span></a>
+                </li>
+                <ul class="sub-menu collapse in" id="admin">
+                  <li><a href="#">User Management </a></li>
+                </ul>
+
+            </ul>
+     </div>
+</div>
+    </div>
+    
+  </div>
+  <!--<a routerLink="/home" routerLinkActive="active">Heroes</a>-->
+        <router-outlet></router-outlet>

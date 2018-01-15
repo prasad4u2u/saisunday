@@ -1,0 +1,97 @@
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Member Search</button>
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog px-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content ">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Member Search</h4>
+      </div>
+      <div class="modal-body">
+        <p>Enter the required fields, and click 'Search'.</p>
+        
+        <div class="row">
+        	
+        	<div class="col-sm-6">
+	        	<div class="form-group">
+		        	<label for="memberid">Member ID</label>
+        			<input type="text" name="memberid"  id="memberid"/> <strong>Or</strong>
+	        	</div>
+	        </div>
+        </div>
+        <div class="row">
+	        <div class="col-sm-6">
+	        	<div class="form-group">
+		        	<label for="firstname">First Name</label>
+		        	<input type="text" name="firstname" id="memberid" class="form-control" />
+	        	</div>
+	        </div>
+        	<div class="col-sm-6">
+        		<div class="form-group">
+	        		<label for="lastname">Last Name</label>
+	        		<input type="text" name="lastname" id="lastname" class="form-control" />	
+        		</div>
+        	</div>	
+        	<div class="col-sm-6">
+        		<div class="form-group">
+	        		<label for="dob">DOB</label>
+	        		<input type="date" name="dob" id="dob"  class="form-control"/>
+	        	</div>
+        	</div>
+        	<div class="col-sm-6">
+        		<div class="form-group">
+	        		<label for="zipcode">Zip Code (Opt)</label>
+	        		<input type="number" name="zipcode" id="zipcode" class="form-control" />
+	        	</div>
+        	</div>
+        	<div class="col-sm-6">
+        		<button name="search" class="btn btn-danger" (click)="getResults();">Search</button>
+        	</div>
+        	<div class="clearfix"></div>
+
+        	<div class="row margin-top-20" [ngStyle]="{display:displayddl}" style="display:none">
+        		<div class="col-sm-24">
+        		<table class="table">
+                    <tr>
+                        <th>Member ID</th>
+                        <th>Full Name</th>
+                        <th>DOB</th> 
+                        <th>Gender</th>
+                        <th>HICN</th>
+                        <th>Carrier</th>
+                        <th>Account</th>
+                        <th>Group</th>
+                        <th>LOE</th>
+                    </tr>
+                    <tr *ngFor="let member of members;">
+                        <td>{{member.memberid}}</td>
+                        <td>{{member.fullname}}</td>
+                        <td>{{member.dob}}</td>
+                        <td>{{member.gender}}</td>
+                        <td>{{member.hicn}}</td>
+                        <td>{{member.carrier}}</td>
+                        <td>{{member.account}}</td>
+                        <td>{{member.group}}</td>
+						<td>{{member.loe}}</td>
+
+                    </tr>
+                </table>		
+
+        		</div>
+        	</div>
+        	
+        	
+        	
+        </div>
+        
+      </div>
+      
+    </div>
+
+  </div>
+</div>
