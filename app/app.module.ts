@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MaincontentComponent } from './maincontent/maincontent.component';
 import { MemberSearchComponent } from './member-search/member-search.component';
+import { DrugSearchComponent } from './drug-search/drug-search.component';
 
 const routes =[{
         path:'',
@@ -15,6 +16,9 @@ const routes =[{
 },{
         path:'memberSearch',
         component:MemberSearchComponent
+},{
+        path:'drugSearch',
+        component:DrugSearchComponent
 }]
 
 @NgModule({
@@ -22,7 +26,8 @@ const routes =[{
     AppComponent,
     HeaderComponent,
     MaincontentComponent,
-    MemberSearchComponent
+    MemberSearchComponent,
+    DrugSearchComponent
   ],
   imports: [
     BrowserModule,
